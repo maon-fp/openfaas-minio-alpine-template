@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Read secrets from file
-{ IFS= read -rd '' ACCESSKEY </var/openfaas/secrets/ACCESSKEY.txt;}
-{ IFS= read -rd '' SECRETKEY </var/openfaas/secrets/SECRETKEY.txt;}
+{ IFS= read -rd '' ACCESSKEY </var/openfaas/secrets/aws-access-key-id-secret;}
+{ IFS= read -rd '' SECRETKEY </var/openfaas/secrets/aws-secret-access-key-secret;}
 
 # Create alias to be useable with minio-client
 mc alias set $ALIAS $URL $ACCESSKEY $SECRETKEY

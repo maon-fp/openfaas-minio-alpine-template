@@ -7,7 +7,7 @@ $ faas new --lang openfaas-minio-alpine-template
 
 ## Setup
 
-Add kubernetes secrets for the MinIO ACCESSKEY (user) and SECRETKEY (password). Reference those in the function description together with URL (url of MinIO instance) and ALIAS (name of connection to later use with the minio-client) as environmental variables:
+Add kubernetes secrets for the MinIO aws-access-key-id-secret (user) and aws-secret-access-key-secret (password). Reference those in the function description together with URL (url of MinIO instance) and ALIAS (name of connection to later use with the minio-client) as environmental variables:
 
 ```yaml
 my-fun-name:
@@ -16,8 +16,8 @@ my-fun-name:
   image: registry.maon.eu/maon/cloud/functions/import-row-input-csv:latest
   readonly_root_filesystem: true
   secrets:
-    - ACCESSKEY
-    - SECRETKEY
+    - aws-access-key-id-secret
+    - aws-secret-access-key-secret
   environment:
     - URL: https://my-minio-instance
     - ALIAS: local
