@@ -1,0 +1,2 @@
+language: openfaas-minio-alpine
+fprocess: sh ./index.sh
