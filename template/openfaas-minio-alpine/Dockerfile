@@ -36,9 +36,10 @@ RUN chmod +rx -R ./function \
 
 USER app
 
+# Watchdog mode
 ENV mode="streaming"
-
 ENV fprocess="sh ./index.sh"
+
 EXPOSE 8080
 
 HEALTHCHECK --interval=3s CMD [ -e /tmp/.lock ] || exit 1
