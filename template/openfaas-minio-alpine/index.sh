@@ -5,7 +5,7 @@
 { IFS= read -rd '' SECRETKEY </var/openfaas/secrets/aws-secret-access-key-secret;}
 
 # Create alias to be useable with minio-client
-mc alias set $ALIAS $URL $ACCESSKEY $SECRETKEY
+mcli alias set $ALIAS $URL $ACCESSKEY $SECRETKEY
 
 sh ./function/handler.sh
 
